@@ -264,20 +264,17 @@ const DemoProjects = () => (
         { 
           name: "Flower Salon Website", 
           url: "https://flower-salon-demo.vercel.app/",
-          image: "🌸",
-          color: "from-pink-500/20 to-purple-500/20"
+          image: "/salon.jpeg"
         },
         { 
           name: "Nitrogen Salon Website", 
           url: "https://nitrogen-salon-demo.vercel.app/",
-          image: "💇",
-          color: "from-blue-500/20 to-cyan-500/20"
+          image: "/nitrozen.jpeg"
         },
         { 
           name: "Zayaka Restaurant Website", 
           url: "https://zayaka-demo.vercel.app/",
-          image: "🍽️",
-          color: "from-orange-500/20 to-red-500/20"
+          image: "/zayaka.jpeg"
         }
       ].map((demo, i) => (
         <motion.div
@@ -289,8 +286,13 @@ const DemoProjects = () => (
         >
           <a href={demo.url} target="_blank" rel="noopener noreferrer" className="block group">
             <GlassCont className="p-0 overflow-hidden hover:border-secondary/40 transition-all">
-              <div className={`aspect-video bg-gradient-to-br ${demo.color} flex items-center justify-center text-6xl`}>
-                {demo.image}
+              <div className="aspect-video relative overflow-hidden bg-black/20">
+                <img 
+                  src={demo.image} 
+                  alt={demo.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-4 group-hover:text-secondary transition-colors">
