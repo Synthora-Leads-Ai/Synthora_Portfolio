@@ -497,132 +497,271 @@ const PricingSection = () => (
         Simple plans to get started fast ⚡
       </motion.h2>
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Starter Plan */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <GlassCont className="p-10 h-full flex flex-col">
-          <div className="mb-6">
-            <div className="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-4">
-              <Zap className="w-6 h-6 text-secondary" />
+        <GlassCont className="p-8 h-full flex flex-col">
+          <div className="mb-4">
+            <div className="w-10 h-10 bg-secondary/20 rounded-xl flex items-center justify-center mb-3">
+              <Zap className="w-5 h-5 text-secondary" />
             </div>
-            <h3 className="text-2xl font-black text-white mb-2">Basic Plan</h3>
-            <p className="text-secondary text-sm font-bold uppercase tracking-widest mb-4">For visibility</p>
-            <div className="text-4xl font-black text-white mb-2">₹2,999</div>
+            <h3 className="text-xl font-black text-white mb-1">Starter Plan</h3>
+            <p className="text-secondary text-xs font-bold uppercase tracking-widest mb-3">New Businesses</p>
+            <div className="text-3xl font-black text-white mb-2">₹2,999</div>
+            <p className="text-white/40 text-xs">5–7 Days Delivery</p>
           </div>
-          <ul className="space-y-4 mb-8 flex-grow">
-            {[
-              "5–6 pages",
-              "Clean UI design",
-              "Mobile responsive",
-              "WhatsApp integration",
-              "Basic SEO"
-            ].map((feature, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-white/70">
-                <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-secondary" />
-                </div>
-                {feature}
-              </li>
-            ))}
+          <ul className="space-y-2 mb-6 flex-grow text-xs">
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              </div>
+              Landing + Multi-section Website
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              </div>
+              Mobile Responsive
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              </div>
+              Basic SEO Setup
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              </div>
+              Contact Form
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              </div>
+              1 Month Support
+            </li>
           </ul>
-          <div className="text-center mb-6">
-            <p className="text-white/60 text-sm mb-2">Best for:</p>
-            <p className="text-white font-bold">Getting online fast</p>
-          </div>
-          <a href="https://wa.me/918305341095?text=Hi! I'm interested in the Basic Plan (₹2,999)" target="_blank" className="w-full py-4 rounded-xl font-bold bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all text-center block">
+          <a href="https://wa.me/918305341095?text=Hi! I'm interested in the Starter Plan (₹2,999)" target="_blank" className="w-full py-3 rounded-xl font-bold bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all text-center block text-sm">
             Get Started
           </a>
         </GlassCont>
       </motion.div>
 
+      {/* Growth Plan */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
       >
-        <GlassCont className="p-10 h-full border-primary/30 flex flex-col relative">
+        <GlassCont className="p-8 h-full border-primary/30 flex flex-col relative">
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-black font-black text-xs py-1 px-4 rounded-full uppercase">
             Popular
           </div>
-          <div className="mb-6">
-            <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
-              <Shield className="w-6 h-6 text-primary" />
+          <div className="mb-4">
+            <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center mb-3">
+              <Shield className="w-5 h-5 text-primary" />
             </div>
-            <h3 className="text-2xl font-black text-white mb-2">Pro Plan</h3>
-            <p className="text-primary text-sm font-bold uppercase tracking-widest mb-4">For growth</p>
-            <div className="text-4xl font-black text-white mb-2">₹4,999</div>
+            <h3 className="text-xl font-black text-white mb-1">Growth Plan</h3>
+            <p className="text-primary text-xs font-bold uppercase tracking-widest mb-3">Growing Brands</p>
+            <div className="text-3xl font-black text-white mb-2">₹4,999</div>
+            <p className="text-white/40 text-xs">7–10 Days Delivery</p>
           </div>
-          <ul className="space-y-4 mb-8 flex-grow">
-            {[
-              "Full website + backend",
-              "Admin panel",
-              "Lead system (forms + WhatsApp + email)",
-              "SEO setup",
-              "Conversion-focused design"
-            ].map((feature, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-white/70">
-                <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                </div>
-                {feature}
-              </li>
-            ))}
+          <ul className="space-y-2 mb-6 flex-grow text-xs">
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+              </div>
+              Landing + 5 Custom Pages
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+              </div>
+              Premium UI Design
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+              </div>
+              Intermediate SEO
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+              </div>
+              Smart Forms + WhatsApp
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+              </div>
+              Basic Lead Panel
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+              </div>
+              1 Month Support
+            </li>
           </ul>
-          <div className="text-center mb-6">
-            <p className="text-white/60 text-sm mb-2">Best for:</p>
-            <p className="text-white font-bold">Getting real leads</p>
-          </div>
-          <a href="https://wa.me/918305341095?text=Hi! I'm interested in the Pro Plan (₹4,999)" target="_blank" className="w-full py-4 rounded-xl font-bold btn-gradient text-white shadow-xl hover:scale-[1.02] transition-all text-center block">
+          <a href="https://wa.me/918305341095?text=Hi! I'm interested in the Growth Plan (₹4,999)" target="_blank" className="w-full py-3 rounded-xl font-bold btn-gradient text-white shadow-xl hover:scale-[1.02] transition-all text-center block text-sm">
             Get Started
           </a>
         </GlassCont>
       </motion.div>
 
+      {/* Business Plan */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
       >
-        <GlassCont className="p-10 h-full flex flex-col">
-          <div className="mb-6">
-            <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-4">
-              <Crown className="w-6 h-6 text-accent" />
+        <GlassCont className="p-8 h-full flex flex-col">
+          <div className="mb-4">
+            <div className="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center mb-3">
+              <Globe className="w-5 h-5 text-accent" />
             </div>
-            <h3 className="text-2xl font-black text-white mb-2">Enterprise Plan</h3>
-            <p className="text-accent text-sm font-bold uppercase tracking-widest mb-4">For scaling 🚀</p>
-            <div className="text-4xl font-black text-white mb-2">₹9,999</div>
+            <h3 className="text-xl font-black text-white mb-1">Business Plan</h3>
+            <p className="text-accent text-xs font-bold uppercase tracking-widest mb-3">Established Businesses</p>
+            <div className="text-3xl font-black text-white mb-2">₹7,999</div>
+            <p className="text-white/40 text-xs">14–20 Days Delivery</p>
           </div>
-          <ul className="space-y-4 mb-8 flex-grow">
-            {[
-              "Advanced UI/UX + 3D",
-              "SEO system (blogs + location pages)",
-              "Lead automation",
-              "WhatsApp auto replies",
-              "Email follow-ups",
-              "Monthly growth support"
-            ].map((feature, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-white/70">
-                <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center mt-0.5 shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-accent" />
-                </div>
-                {feature}
-              </li>
-            ))}
+          <ul className="space-y-2 mb-6 flex-grow text-xs">
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-accent/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+              </div>
+              10 Multi Funnel Pages
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-accent/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+              </div>
+              Custom Brand Design
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-accent/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+              </div>
+              Advanced + Local SEO
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-accent/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+              </div>
+              Full Store Setup
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-accent/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+              </div>
+              Email + CRM Integration
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-accent/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+              </div>
+              Admin Console + Hosting
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-accent/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+              </div>
+              3 Months Free Support
+            </li>
           </ul>
-          <div className="text-center mb-6">
-            <p className="text-white/60 text-sm mb-2">Best for:</p>
-            <p className="text-white font-bold">Full business automation</p>
-          </div>
-          <a href="https://wa.me/918305341095?text=Hi! I'm interested in the Enterprise Plan (₹9,999)" target="_blank" className="w-full py-4 rounded-xl font-bold bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all text-center block">
+          <a href="https://wa.me/918305341095?text=Hi! I'm interested in the Business Plan (₹7,999)" target="_blank" className="w-full py-3 rounded-xl font-bold bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all text-center block text-sm">
             Get Started
           </a>
         </GlassCont>
       </motion.div>
+
+      {/* Premium Plan */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+      >
+        <GlassCont className="p-8 h-full flex flex-col border-secondary/20">
+          <div className="mb-4">
+            <div className="w-10 h-10 bg-secondary/20 rounded-xl flex items-center justify-center mb-3">
+              <Crown className="w-5 h-5 text-secondary" />
+            </div>
+            <h3 className="text-xl font-black text-white mb-1">Premium Plan</h3>
+            <p className="text-secondary text-xs font-bold uppercase tracking-widest mb-3">Scale & Automation</p>
+            <div className="text-3xl font-black text-white mb-2">₹9,999</div>
+            <p className="text-white/40 text-xs">20+ Days Delivery</p>
+          </div>
+          <ul className="space-y-2 mb-6 flex-grow text-xs">
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              </div>
+              Fully Custom Solution
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              </div>
+              Premium Custom Design
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              </div>
+              Advanced + Content SEO
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              </div>
+              Complete Advanced Store
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              </div>
+              Full Automation System
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              </div>
+              Admin Console + CMS
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              </div>
+              Full Business Insights
+            </li>
+            <li className="flex items-start gap-2 text-white/70">
+              <div className="w-4 h-4 rounded-full bg-secondary/20 flex items-center justify-center mt-0.5 shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              </div>
+              5 Months Free Support
+            </li>
+          </ul>
+          <a href="https://wa.me/918305341095?text=Hi! I'm interested in the Premium Plan (₹9,999)" target="_blank" className="w-full py-3 rounded-xl font-bold bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all text-center block text-sm">
+            Get Started
+          </a>
+        </GlassCont>
+      </motion.div>
+    </div>
+
+    {/* View Detailed Comparison Link */}
+    <div className="mt-12 text-center">
+      <Link to="/pricing" className="text-secondary hover:text-white font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-2 transition-colors">
+        View Detailed Comparison Table <ArrowRight className="w-4 h-4" />
+      </Link>
     </div>
   </section>
 );
