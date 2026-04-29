@@ -3,35 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { motion, useScroll, useSpring, useTransform } from "motion/react";
+import { motion, useScroll, useSpring } from "motion/react";
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import { 
-  NeuralSphere, 
   DataCube, 
-  CoinStack, 
-  CalendarBlock, 
   NodeNetwork, 
-  EnergyCore,
   OrbitingChats,
   GlassCont,
-  StarCluster,
-  DashboardMockup,
-  ProcessVisual
+  StarCluster
 } from "./components/ThreeDAssets";
 import { BackgroundVideo } from "./components/BackgroundVideo";
 import PricingPage from "./pages/PricingPage";
 import { 
   Zap, 
   Cpu, 
-  Layers, 
   Activity, 
   Globe, 
   Shield, 
-  BarChart3, 
   ArrowRight,
   Menu,
   X,
-  Plus,
   MessageCircle,
   Twitter,
   Linkedin,
@@ -41,38 +32,6 @@ import {
   Crown
 } from "lucide-react";
 import React, { useState, useEffect } from "react";
-
-const TypewriterHeadline = ({ words }: { words: string[] }) => {
-  const [index, setIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
-  const [reverse, setReverse] = useState(false);
-
-  useEffect(() => {
-    if (subIndex === words[index].length + 1 && !reverse) {
-        const timeout = setTimeout(() => setReverse(true), 2000);
-        return () => clearTimeout(timeout);
-    }
-
-    if (subIndex === 0 && reverse) {
-      setReverse(false);
-      setIndex((prev) => (prev + 1) % words.length);
-      return;
-    }
-
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (reverse ? -1 : 1));
-    }, Math.max(reverse ? 50 : 100, Math.random() * 50));
-
-    return () => clearTimeout(timeout);
-  }, [subIndex, index, reverse, words]);
-
-  return (
-    <span className="text-gradient min-h-[1.2em] inline-block">
-      {words[index].substring(0, subIndex)}
-      <span className="animate-pulse ml-1 text-white opacity-40">|</span>
-    </span>
-  );
-};
 
 const ScrollProgressBar = () => {
   const { scrollYProgress } = useScroll();
@@ -87,17 +46,6 @@ const ScrollProgressBar = () => {
       className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-primary to-accent z-[100] origin-left shadow-[0_0_15px_rgba(0,229,255,0.4)]"
       style={{ scaleX }}
     />
-  );
-};
-
-const Parallax = ({ children, offset = 50, className = "" }: { children: React.ReactNode, offset?: number, className?: string }) => {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], [0, offset]);
-
-  return (
-    <motion.div style={{ y }} className={className}>
-      {children}
-    </motion.div>
   );
 };
 
@@ -429,23 +377,6 @@ const WallOfLove = () => (
 
 
 
-const DashboardSection = () => (
-  <section className="section-spacing px-6 relative overflow-hidden flex flex-col items-center">
-    <BackgroundVideo 
-      videoUrl="https://cdn.pixabay.com/video/2021/09/01/87134-595701833_large.mp4"
-      opacity={0.4}
-      overlayColor="rgba(10, 10, 15, 0.75)"
-    />
-    <div className="text-center mb-16 z-10">
-      <span className="meta-label">Command Center</span>
-      <h2 className="hero-title text-white uppercase mb-6 hierarchy-heading">Autonomous Control</h2>
-    </div>
-    <div className="w-full flex justify-center">
-      <DashboardMockup />
-    </div>
-  </section>
-);
-
 const HowWeWorkSection = () => (
   <section id="process" className="section-spacing px-6 max-w-7xl mx-auto">
     <div className="text-center mb-20">
@@ -692,34 +623,6 @@ const PricingSection = () => (
           </a>
         </GlassCont>
       </motion.div>
-    </div>
-  </section>
-);
-
-const FAQSection = () => (
-  <section className="section-spacing px-6 max-w-4xl mx-auto">
-    <h2 className="hero-title text-white uppercase mb-16 text-center text-5xl">F.A.Q</h2>
-    <div className="space-y-6 text-center md:text-left">
-      {/* FAQ items wrapped in div to handle key */}
-      {[
-        { q: "How quickly can I get online?", a: "Most local businesses achieve a stable online presence and full setup within 48 to 72 hours." },
-        { q: "Is the management truly hassle-free?", a: "Yes. Once we set everything up, Synthora handles updates and monitoring so you don't have to." },
-        { q: "Can I upgrade my plan later?", a: "Absolutely. As your business grows, you can scale your digital assets and features at any time." }
-      ].map((item, i) => (
-        <div key={i}>
-          <GlassCont className="p-0 overflow-hidden text-left hierarchy-card">
-            <details className="group">
-              <summary className="p-8 cursor-pointer list-none flex justify-between items-center text-white/90 font-bold group-hover:text-secondary transition-colors">
-                {item.q}
-                <Plus className="w-5 h-5 group-open:rotate-45 transition-transform opacity-40 group-hover:opacity-100" />
-              </summary>
-              <div className="px-8 pb-8 text-subtext leading-relaxed text-base">
-                {item.a}
-              </div>
-            </details>
-          </GlassCont>
-        </div>
-      ))}
     </div>
   </section>
 );
@@ -988,72 +891,6 @@ const CaseStudiesSection = () => (
       <p className="text-2xl text-white/80 font-medium">
         "Simple systems → Real business growth"
       </p>
-    </div>
-  </section>
-);
-
-const MetricsSection = () => (
-  <section className="section-spacing bg-[#0D0F14]/40 border-y border-white/5">
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-        <div className="text-center group flex flex-col items-center">
-          <div className="mb-8 flex justify-center">
-            <div className="w-24 h-24 rounded-full glass border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(139,92,246,0.25)] transition-all duration-500">
-                <Globe className="w-11 h-11" />
-            </div>
-          </div>
-          <div className="text-5xl font-display font-black text-white mb-3 tracking-tighter">$42.8k</div>
-          <div className="text-subtext uppercase tracking-widest text-[11px] font-bold">Avg Revenue Growth</div>
-        </div>
-        <div className="text-center group flex flex-col items-center">
-          <div className="mb-8 flex justify-center">
-            <div className="w-24 h-24 rounded-full glass border border-secondary/20 flex items-center justify-center text-secondary group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(0,229,255,0.25)] transition-all duration-500">
-                <BarChart3 className="w-11 h-11" />
-            </div>
-          </div>
-          <div className="text-5xl font-display font-black text-white mb-3 tracking-tighter">312%</div>
-          <div className="text-subtext uppercase tracking-widest text-[11px] font-bold">ROI Enhancement</div>
-        </div>
-        <div className="text-center group flex flex-col items-center">
-          <div className="mb-8 flex justify-center">
-            <div className="w-24 h-24 rounded-full glass border border-accent/20 flex items-center justify-center text-accent group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(255,77,141,0.25)] transition-all duration-500">
-                <Zap className="w-11 h-11" />
-            </div>
-          </div>
-          <div className="text-5xl font-display font-black text-white mb-3 tracking-tighter">1,482</div>
-          <div className="text-subtext uppercase tracking-widest text-[11px] font-bold">Live Bookings</div>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-const CTASection = () => (
-  <section className="section-spacing px-6 overflow-hidden flex flex-col items-center relative">
-    <BackgroundVideo 
-      videoUrl="https://cdn.pixabay.com/video/2020/09/27/50849-463870674_large.mp4"
-      opacity={0.5}
-      overlayColor="rgba(10, 10, 15, 0.7)"
-    />
-    <div className="max-w-5xl mx-auto relative text-center">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 opacity-30">
-        <EnergyCore />
-      </div>
-      
-      <GlassCont className="text-center py-20 relative overflow-hidden">
-        <div className="relative z-10">
-          <h2 className="font-display text-4xl md:text-7xl font-black text-white mb-8 leading-tight">
-            Just Say <span className="text-gradient italic">"YES"</span> <br/>
-            To Start Growing.
-          </h2>
-          <p className="text-subtext max-w-xl mx-auto mb-12 text-lg">
-            Ready to boost your local business? We handle the design, setup, and updates. You just handle the customers.
-          </p>
-          <a href="https://wa.me/918305341095" target="_blank" className="btn-gradient text-white px-10 py-5 rounded-full font-display font-black text-xl shadow-[0_0_50px_rgba(139,92,246,0.3)] hover:scale-105 transition-all inline-block uppercase tracking-widest">
-            Claim Your Market
-          </a>
-        </div>
-      </GlassCont>
     </div>
   </section>
 );

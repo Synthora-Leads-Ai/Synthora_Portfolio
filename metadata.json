@@ -1,6 +1,26 @@
 {
-  "name": "Synthora",
-  "description": "A futuristic premium SaaS landing page featuring hyper-dimensional glassmorphism and 3D design systems built with React and Motion.",
+  "name": "Synthora Portfolio",
+  "description": "Synthora - Build Your Business Online. Fast, Simple, Effective. Websites, AI Automations & Growth Systems for local businesses and founders. Professional web development, AI automation, and design services.",
+  "author": "Synthora Team (Sahil Sahu, Uday Jhariya, Nakul Narang)",
+  "version": "1.0.0",
+  "contact": {
+    "whatsapp": "+91 8305341095",
+    "email": "SynthoraAI13@gmail.com",
+    "twitter": "@synthoraaii",
+    "linkedin": "synthora-ai-leads-526510405"
+  },
+  "services": [
+    "Website Development",
+    "AI Automation",
+    "Design Services"
+  ],
+  "technologies": [
+    "React 19",
+    "TypeScript",
+    "Vite 6",
+    "Tailwind CSS 4",
+    "Framer Motion 12"
+  ],
   "requestFramePermissions": [],
   "majorCapabilities": []
 }
