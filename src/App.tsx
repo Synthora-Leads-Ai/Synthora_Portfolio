@@ -283,7 +283,7 @@ const DemoProjects = () => (
         },
         { 
           name: "Food of Indians", 
-          url: "https://real-estate-red-beta.vercel.app/",
+          url: "https://food-for-indians.vercel.app/",
           image: "/food-of-indians.png"
         }
       ].map((demo, i) => (
