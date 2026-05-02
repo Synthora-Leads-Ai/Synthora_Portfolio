@@ -275,6 +275,16 @@ const DemoProjects = () => (
           name: "Zayaka Restaurant Website", 
           url: "https://zayaka-demo.vercel.app/",
           image: "/zayaka.jpeg"
+        },
+        { 
+          name: "Real Estate Website", 
+          url: "https://real-estate-red-beta.vercel.app/",
+          image: "/real-estate.png"
+        },
+        { 
+          name: "Food of Indians", 
+          url: "https://real-estate-red-beta.vercel.app/",
+          image: "/food-of-indians.png"
         }
       ].map((demo, i) => (
         <motion.div
